@@ -1,13 +1,14 @@
 {
   "name": "nwwbot",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "NorthWestWind's bot!",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "engines": {
-    "node": "12.x"
+    "node": "12.x",
+    "npm": "6.14.6"
   },
   "author": "NorthWestWind",
   "license": "ISC",
