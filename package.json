@@ -19,7 +19,6 @@
     "moment-duration-format": "^2.2.2",
     "ms": "^2.1.2",
     "mysql": "^2.18.1",
-    "newrelic": "^6.11.0",
     "node-fetch": "^2.6.0",
     "request": "^2.88.2",
     "statuses": "^2.0.0"

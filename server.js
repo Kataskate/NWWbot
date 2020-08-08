@@ -1,10 +1,8 @@
-require("newrelic")
 const express = require("express");
 const request = require("request");
 const device = require("express-device");
 const app = express();
 const moment = require("moment");
-//require("heroku-self-ping").default(process.env.APP_URL);
 app.use(device.capture());
 app.get("/", (req, response) => {
   if(req.device.type === "phone")
@@ -30,5 +28,10 @@ app.get("/manual", (req, response) => {
 app.get("/ping", (req, response) => {
   console.log(`Pinged at ${moment().format("HH:mm:ss")}`);
   response.sendStatus(200);
+});
+app.get("/:key/stop", (req, response) => {
+	if(req.params.key != process.env.RELIC) return;
+	console.log("Stopped");
+	process.exit(1);
 });
 app.listen(process.env.PORT || 3000);
